@@ -1,0 +1,51 @@
+:root {
+    --text-muted: #ced4da;
+    --bg: #212529;
+    --bg-darker: #131618;
+    --highlight: #007bff;
+
+    --ic-brand-global-nav-bgd: var(--bg);
+    --ic-link-color: var(--highlight);
+    --ic-brand-font-color-dark: #ffffff;
+}
+
+body,
+.ic-Layout-columns,
+.ic-Dashboard-header__layout,
+.ic-app,
+.header-bar,
+#breadcrumbs {
+    background: var(--bg);
+}
+
+.ic-notification {
+    border: none !important;
+}
+
+.ic-notification__icon {
+    background: var(--bg-darker);
+}
+
+.btn {
+    background: var(--bg-darker);
+    color: var(--ic-brand-font-color-dark);
+    border: none !important;
+}
+
+.course-title {
+    color: var(--ic-brand-font-color-dark) !important;
+}
+
+.notification_account_content,
+.ic-notification__content {
+    background: var(--bg-darker);
+}
+
+.todo-details::after,
+.event-details::after {
+    background: none !important;
+}
+
+.right-side-list p {
+    color: var(--text-muted) !important;
+}

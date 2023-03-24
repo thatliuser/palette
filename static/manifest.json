@@ -23,6 +23,15 @@
         },
         {
             "matches": [
+                "https://canvas.ucdavis.edu/*"
+            ],
+            "css": [
+                "colors.css"
+            ],
+            "run_at": "document_start"
+        },
+        {
+            "matches": [
                 "https://cas.ucdavis.edu/cas/login*"
             ],
             "js": [
