@@ -1,3 +1,2 @@
 # palette
-
-A Rust app meant to replace Canvas, with less waiting for load times using caching.
+A Firefox extension designed to make using Canvas more efficient.

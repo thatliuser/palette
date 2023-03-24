@@ -1,0 +1,28 @@
+{
+    "manifest_version": 2,
+    "name": "palette",
+    "author": "Eric",
+    "version": "1.0.0",
+    "description": "A Firefox extension designed to make using Canvas more efficient.",
+    "content_scripts": [
+        {
+            "matches": [
+                "https://login.canvas.ucdavis.edu/"
+            ],
+            "js": [
+                "goto-login.js"
+            ]
+        },
+        {
+            "matches": [
+                "https://canvas.ucdavis.edu/*"
+            ],
+            "js": [
+                "add-keybinds.js"
+            ]
+        }
+    ],
+    "icons": {
+        "96": "96x96.png"
+    }
+}

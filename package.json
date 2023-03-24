@@ -1,0 +1,12 @@
+{
+    "name": "palette",
+    "version": "1.0.0",
+    "description": "A Firefox extension designed to make using Canvas more efficient.",
+    "scripts": {
+        "build": "tsc && node move-static.mjs"
+    },
+    "author": "Eric",
+    "devDependencies": {
+        "typescript": "^5.0.2"
+    }
+}
