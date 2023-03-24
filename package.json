@@ -3,11 +3,12 @@
     "version": "1.0.0",
     "description": "A Firefox extension designed to make using Canvas more efficient.",
     "scripts": {
-        "build": "tsc && node move-static.mjs"
+        "build": "tsc && sass css/:build/ && node move-static.mjs"
     },
     "author": "Eric",
     "devDependencies": {
         "@types/jquery": "1.10.27",
+        "sass": "^1.60.0",
         "typescript": "^5.0.2"
     }
 }

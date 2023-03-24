@@ -1,0 +1,23 @@
+@use "colors" as *;
+
+// Notifications
+.ic-notification {
+    border: none !important;
+}
+
+.ic-notification__icon,
+.ic-notification__content,
+.notification_account_content {
+    background: $bg-darker;
+}
+
+// "Dashboard" text has a white background otherwise
+.ic-Dashboard-header__layout {
+    background: $bg;
+}
+
+// Recent activity lists
+.stream_header:hover,
+.stream-details tr:hover {
+    background: $bg-darker;
+}

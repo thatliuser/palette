@@ -1,0 +1,23 @@
+@use "colors" as *;
+
+.btn,
+.Button {
+    background: $bg-darker;
+    color: $text;
+    border: none !important;
+}
+
+.right-side-list p {
+    color: $text-muted !important;
+}
+
+.ic-Layout-columns,
+.header-bar,
+#breadcrumbs {
+    background: $bg;
+}
+
+.todo-details::after,
+.event-details::after {
+    background: none !important;
+}

@@ -1,0 +1,21 @@
+@use "colors" as *;
+
+// Pages
+@use "dash";
+@use "course";
+
+// Miscellaneous components
+@use "elements";
+
+body,
+.ic-app {
+    background: $bg;
+}
+
+// Override globals used for colors in many places
+:root {
+    --ic-brand-global-nav-bgd: #{$bg};
+    --ic-link-color: #{$highlight};
+    --ic-link-color-darkened-10: #{$highlight};
+    --ic-brand-font-color-dark: #{$text};
+}
