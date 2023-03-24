@@ -20,6 +20,14 @@
             "js": [
                 "add-keybinds.js"
             ]
+        },
+        {
+            "matches": [
+                "https://cas.ucdavis.edu/cas/login*"
+            ],
+            "js": [
+                "autosubmit.js"
+            ]
         }
     ],
     "icons": {
