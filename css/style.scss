@@ -18,4 +18,11 @@ body,
     --ic-link-color: #{$highlight};
     --ic-link-color-darkened-10: #{$highlight};
     --ic-brand-font-color-dark: #{$text};
+    // Some highlights
+    // To-do notification background
+    --ic-brand-primary: #{$highlight};
+    // Sidebar notification background
+    --ic-brand-global-nav-menu-item__badge-bgd: #{$highlight};
+    // Sidebar active icon color
+    --ic-brand-global-nav-ic-icon-svg-fill--active: #{$highlight};
 }
