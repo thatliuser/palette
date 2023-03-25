@@ -3,20 +3,44 @@
 .btn,
 .Button {
     background: $bg-darker;
-    color: $text;
+    color: inherit;
     border: none !important;
+
+    &:hover {
+        background: $text;
+        color: $bg-darker;
+    }
 }
 
-.right-side-list p {
-    color: $text-muted !important;
+// Sidebar small text
+.right-side-list {
+    p {
+        color: $text-muted !important;
+    }
 }
 
+// Icon colors
+i[class*="icon-"]::before,
+i[class^="icon-"]::before,
+a[class*="icon-"]::before,
+a[class^="icon-"]::before {
+    background: none;
+    color: inherit;
+}
+
+// Right side icons are default gray.
+#right-side .right-side-list li a>i {
+    color: $text;
+}
+
+// Various elements that have bad background colors
 .ic-Layout-columns,
 .header-bar,
 #breadcrumbs {
-    background: $bg;
+    background: inherit;
 }
 
+// Weird gradient that looks horrible in dark mode
 .todo-details::after,
 .event-details::after {
     background: none !important;

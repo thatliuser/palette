@@ -1,9 +1,12 @@
 @use "colors" as *;
 
-.course-title {
-    color: $text !important;
+// Title and sidebar titles are really ugly otherwise
+.course-title,
+.list-view a.active {
+    color: inherit !important;
 }
 
+// Visibility icon
 .nav-icon {
     background: none;
     color: $text;
