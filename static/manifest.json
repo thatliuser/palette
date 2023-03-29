@@ -4,41 +4,19 @@
     "author": "Eric",
     "version": "1.0.0",
     "description": "A Firefox extension designed to make using Canvas more efficient.",
-    "content_scripts": [
-        {
-            "matches": [
-                "https://login.canvas.ucdavis.edu/"
-            ],
-            "js": [
-                "goto-login.js"
-            ]
-        },
-        {
-            "matches": [
-                "https://canvas.ucdavis.edu/*"
-            ],
-            "js": [
-                "add-keybinds.js"
-            ]
-        },
-        {
-            "matches": [
-                "https://canvas.ucdavis.edu/*"
-            ],
-            "css": [
-                "style.css"
-            ],
-            "run_at": "document_start"
-        },
-        {
-            "matches": [
-                "https://cas.ucdavis.edu/cas/login*"
-            ],
-            "js": [
-                "autosubmit.js"
-            ]
-        }
+    "permissions": [
+        "https://canvas.ucdavis.edu/*",
+        "https://login.canvas.ucdavis.edu/",
+        "https://cas.ucdavis.edu/cas/login*",
+        "scripting"
     ],
+    "background": {
+        "scripts": [
+            "setup.js"
+        ],
+        "persistent": false
+    },
+    "user_scripts": {},
     "icons": {
         "96": "96x96.png"
     }
