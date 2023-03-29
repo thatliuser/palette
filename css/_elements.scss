@@ -45,3 +45,13 @@ a[class^="icon-"]::before {
 .event-details::after {
     background: none !important;
 }
+
+// Inputs
+input {
+    background: $bg-darker !important;
+}
+
+// Toggler
+.accessible-toggler {
+    color: $text;
+}

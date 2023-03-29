@@ -17,10 +17,12 @@ body,
     --ic-brand-global-nav-bgd: #{$bg};
     --ic-link-color: #{$highlight};
     --ic-link-color-darkened-10: #{$highlight};
+    --ic-brand-font-color-dark-lightened-15: #{$highlight};
     --ic-brand-font-color-dark: #{$text};
     // Some highlights
     // To-do notification background
     --ic-brand-primary: #{$highlight};
+    --ic-brand-primary-lightened-15: #{$highlight};
     // Sidebar notification background
     --ic-brand-global-nav-menu-item__badge-bgd: #{$highlight};
     // Sidebar active icon color

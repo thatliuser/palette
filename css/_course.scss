@@ -11,3 +11,14 @@
     background: none;
     color: $text;
 }
+
+// Assignments container
+.item-group-container {
+    background: none;
+}
+
+// Assignment header and assignment itself
+.ig-header,
+.ig-row {
+    background: $bg-darker !important;
+}
