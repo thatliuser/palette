@@ -1,4 +1,4 @@
-(function () {
+(() => {
     // Make username and password fields required
     // This way the page won't reload and the clicking won't infinitely loop
     // Also it's just generally more ergonomic
@@ -8,4 +8,4 @@
     }
     const submit = document.querySelector("input#submit") as HTMLInputElement
     submit.click()
-}())
+})()
