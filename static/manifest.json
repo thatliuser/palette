@@ -14,7 +14,7 @@
         "scripts": [
             "setup.js"
         ],
-        "persistent": false
+        "persistent": true
     },
     "user_scripts": {},
     "icons": {
