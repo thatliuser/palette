@@ -1,5 +1,5 @@
 import path from "path"
-import * as wp from "webpack"
+import wp from "webpack"
 
 class GenerateInjectorPlugin {
     apply(compiler: wp.Compiler) {
