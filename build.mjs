@@ -9,8 +9,11 @@ async function main() {
 
     // Create inject.js to inject hook.js into page script.
     const hook = (await fs.readFile("build/hook.js")).toString()
+    // Escape format string
     hook.replaceAll("`", "\\`")
-    const inject = `window.eval(\`${hook}\`)`
+    // Use indirect eval - it's faster (?)
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval#using_indirect_eval
+    const inject = `window.eval?.(\`${hook}\`)`
     fs.writeFile("build/inject.js", inject)
 }
 
