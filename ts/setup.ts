@@ -22,7 +22,7 @@ function addScripts() {
         // Inject page script into Canvas
         {
             matches: [`https://${canvas}/*`],
-            js: [{ file: "inject.js" }]
+            js: [{ file: "ui/inject.js" }]
         }
     ]
     for (const script of contentScripts) {
