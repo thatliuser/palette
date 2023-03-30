@@ -1,4 +1,6 @@
 (() => {
+    // Hack to intercept WebPack's require function
+    // Inspired by BetterDiscord (https://github.com/BetterDiscord/BetterDiscord/blob/main/renderer/src/modules/webpackmodules.js#L388)
     let __webpack_require__: Webpack.Require = (id) => {
         return {}
     }

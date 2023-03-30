@@ -1,3 +1,4 @@
+// Autoclick the login button on the homepage.
 (() => {
     const links = document.querySelectorAll("a.marketing-highlight") as NodeListOf<HTMLAnchorElement>
     for (const link of links) {

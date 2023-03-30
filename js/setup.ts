@@ -6,12 +6,12 @@ function addScripts() {
         // Directly jump to login page
         {
             matches: [`https://login.${canvas}/`],
-            js: [{ file: "goto-login.js" }]
+            js: [{ file: "auto/goto.js" }]
         },
         // Autoclick login button if autofill is on
         {
             matches: [`https://cas.${davis}/cas/login*`],
-            js: [{ file: "autosubmit.js" }]
+            js: [{ file: "auto/submit.js" }]
         },
         // Custom styles for Canvas
         {

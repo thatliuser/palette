@@ -1,3 +1,4 @@
+// Autosubmit CAS stuff if autofilled
 (() => {
     // Make username and password fields required
     // This way the page won't reload and the clicking won't infinitely loop
