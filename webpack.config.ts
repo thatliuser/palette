@@ -30,7 +30,7 @@ function getEntries(): wp.EntryObject {
     const scripts = ["auto/goto", "auto/submit", "hook", "setup"]
     const entries: wp.EntryObject = {}
     for (const script of scripts) {
-        entries[script] = `./js/${script}.ts`
+        entries[script] = `./ts/${script}.ts`
     }
 
     // CSS
@@ -79,9 +79,7 @@ const config: wp.Configuration = {
             }
         ]
     },
-    plugins: [
-        new GenerateInjectorPlugin()
-    ],
+    plugins: [new GenerateInjectorPlugin()],
     output: {
         path: path.resolve(__dirname, "build"),
         // We don't need a wrapper since Firefox extensions
