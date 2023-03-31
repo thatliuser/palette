@@ -4,11 +4,12 @@ import fs from "node:fs/promises"
 
 function getEntries(): Record<string, string> {
     // JS
-    const scripts = ["auto/goto", "auto/submit", "ui/hook", "setup"]
+    const scripts = ["auto/goto", "auto/submit", "setup"]
     const entries: Record<string, string> = {}
     for (const script of scripts) {
-        entries[script] = `./ts/${script}.ts`
+        entries[script] = `./src/${script}.ts`
     }
+    entries["ui/hook"] = "./src/ui/hook.tsx"
 
     // CSS
     entries["style"] = "./css/style.scss"
@@ -32,6 +33,7 @@ async function emitInjector() {
 async function build() {
     await esbuild.build({
         bundle: true,
+        format: "iife",
         outdir: "build",
         entryPoints: getEntries(),
         plugins: [sassPlugin()],

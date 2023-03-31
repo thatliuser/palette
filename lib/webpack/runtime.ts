@@ -1,4 +1,4 @@
-import { Maybe } from "../util"
+import { Maybe } from "lib/util"
 
 export type ModuleId = string | number
 export type Module = Object
@@ -51,7 +51,7 @@ export class ChunkViewer {
     }
 }
 
-export function onReady(func: () => void) {
+export function onChunksLoad(func: () => void) {
     try {
         const chunk = webpackChunkcanvas_lms!
         func()
@@ -59,7 +59,7 @@ export function onReady(func: () => void) {
     catch {
         // HACK: This is a race condition. The chunks may not be loaded at document ready.
         // Try again later on.
-        setTimeout(onReady.bind(func), 100)
+        setTimeout(onChunksLoad.bind(func), 100)
     }
 }
 
