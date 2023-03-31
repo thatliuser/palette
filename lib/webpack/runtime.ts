@@ -24,7 +24,7 @@ export class ChunkViewer {
         return require!
     }
 
-    private require = ChunkViewer.getRequire(webpackChunkcanvas_lms!)
+    private require = ChunkViewer.getRequire(webpackChunkcanvas_lms)
 
     private hasSymbols(module: Object, symbols: string[]): boolean {
         for (const symbol of symbols) {
@@ -51,18 +51,14 @@ export class ChunkViewer {
     }
 }
 
-export function onChunksLoad(func: () => void) {
-    try {
-        const chunk = webpackChunkcanvas_lms!
-        func()
-    }
-    catch {
-        // HACK: This is a race condition. The chunks may not be loaded at document ready.
-        // Try again later on.
-        setTimeout(onChunksLoad.bind(func), 100)
-    }
+export function onChunksLoad(callback: () => void) {
+    window.addEventListener("canvasReadyStateChange", () => {
+        if (window.canvasReadyState == "complete") {
+            callback()
+        }
+    })
 }
 
 declare global {
-    var webpackChunkcanvas_lms: Maybe<Chunks>
+    var webpackChunkcanvas_lms: Chunks
 }

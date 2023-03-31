@@ -13,17 +13,17 @@ function addScripts() {
             matches: [`https://cas.${davis}/cas/login*`],
             js: [{ file: "auto/submit.js" }]
         },
-        // Custom styles for Canvas
+
         {
             matches: [`https://${canvas}/*`],
+            // Custom styles for Canvas
             css: [{ file: "style.css" }],
+            // Inject page script into Canvas
+            // This isn't a source file; it's codegenned during build.
+            // The actual source for this is in `ui/hook.tsx`.
+            js: [{ file: "ui/inject.js" }],
             runAt: "document_start"
         },
-        // Inject page script into Canvas
-        {
-            matches: [`https://${canvas}/*`],
-            js: [{ file: "ui/inject.js" }]
-        }
     ]
     for (const script of contentScripts) {
         browser.contentScripts.register(script)
