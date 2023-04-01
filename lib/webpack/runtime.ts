@@ -24,9 +24,9 @@ export class ChunkViewer {
         return require!
     }
 
-    private require = ChunkViewer.getRequire(webpackChunkcanvas_lms)
+    private static require = ChunkViewer.getRequire(webpackChunkcanvas_lms)
 
-    private hasSymbols(module: Object, symbols: string[]): boolean {
+    private static hasSymbols(module: Object, symbols: string[]): boolean {
         for (const symbol of symbols) {
             if (!(symbol in module)) {
                 return false
@@ -35,12 +35,12 @@ export class ChunkViewer {
         return true
     }
 
-    getBySymbols(symbols: string[]): Maybe<Module> {
+    static getBySymbols(symbols: string[]): Maybe<Module> {
         // We know this is non-null if we have the require function
-        for (const moduleId of Object.keys(this.require.m)) {
+        for (const moduleId of Object.keys(ChunkViewer.require.m)) {
             try {
-                const module = this.require(moduleId)
-                if (this.hasSymbols(module, symbols)) {
+                const module = ChunkViewer.require(moduleId)
+                if (ChunkViewer.hasSymbols(module, symbols)) {
                     return module
                 }
             } catch {
@@ -49,14 +49,6 @@ export class ChunkViewer {
         }
         return undefined
     }
-}
-
-export function onChunksLoad(callback: () => void) {
-    window.addEventListener("canvasReadyStateChange", () => {
-        if (window.canvasReadyState == "complete") {
-            callback()
-        }
-    })
 }
 
 declare global {

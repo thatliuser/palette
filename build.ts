@@ -4,12 +4,11 @@ import fs from "node:fs/promises"
 
 function getEntries(): Record<string, string> {
     // JS
-    const scripts = ["auto/goto", "auto/submit", "setup"]
+    const scripts = ["auto/goto", "auto/submit", "inject/inject", "setup"]
     const entries: Record<string, string> = {}
     for (const script of scripts) {
         entries[script] = `./src/${script}.ts`
     }
-    entries["ui/hook"] = "./src/ui/hook.tsx"
 
     // CSS
     entries["style"] = "./css/style.scss"
@@ -23,14 +22,17 @@ function getEntries(): Record<string, string> {
     return entries
 }
 
-async function emitInjector() {
-    let hook = (await fs.readFile("build/ui/hook.js")).toString()
-    // Escape format string and any literals
-    hook = hook.replaceAll("`", "\\`").replaceAll("$", "\\$")
-    await fs.writeFile("build/ui/inject.js", `window.eval?.(\`${hook}\`)`)
-}
-
 async function build() {
+    // Compile payloads to be used in injector
+    await esbuild.build({
+        bundle: true,
+        format: "iife",
+        outdir: "payload",
+        entryPoints: ["src/ui/wait.ts", "src/ui/main.tsx"],
+        // These become strings for `src/inject/inject.ts`, so use .txt
+        outExtension: { ".js": ".txt" }
+    })
+    // Compile everything else
     await esbuild.build({
         bundle: true,
         format: "iife",
@@ -42,7 +44,6 @@ async function build() {
             ".json": "copy",
         }
     })
-    await emitInjector()
 }
 
 build()

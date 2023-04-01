@@ -19,9 +19,7 @@ function addScripts() {
             // Custom styles for Canvas
             css: [{ file: "style.css" }],
             // Inject page script into Canvas
-            // This isn't a source file; it's codegenned during build.
-            // The actual source for this is in `ui/hook.tsx`.
-            js: [{ file: "ui/inject.js" }],
+            js: [{ file: "inject/inject.js" }],
             runAt: "document_start"
         },
     ]
